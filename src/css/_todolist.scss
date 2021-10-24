@@ -1,0 +1,114 @@
+.todo-app {
+     max-width: 580px;
+     padding: 0 20px;
+     width: 100%;
+     margin: -224px auto 0px;
+     .todo-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+     }
+     .todo-heading {
+          color: white;
+          letter-spacing: 1rem;
+     }
+     .todo-toggle {
+          cursor: pointer;
+     }
+     .todo-form {
+          margin-top: 45px;
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+     }
+     #todo-input {
+          border: none;
+          outline: none;
+          width: 100%;
+          background-color: transparent;
+          padding: 1.5rem;
+     }
+     .border {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-left: 25px;
+          border: 1px solid #65677c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          &-check {
+               background: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+               border: none;
+          }
+     }
+     .todo-list {
+          margin-top: 30px;
+          border-radius: 5px;
+          position: relative;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+     }
+     .todo-item {
+          display: flex;
+          align-items: center;
+          padding: 1.5rem;
+          cursor: pointer;
+          &-title {
+               margin-left: 25px;
+               flex: 1;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               margin-right: 25px;
+          }
+         
+          img {
+               opacity: 0;
+               transition: all 0.2s linear;
+          }
+          &:hover img {
+               opacity: 1;
+          }
+     }
+
+     .icon-cross {
+          margin-left: auto;
+          cursor: pointer;
+     }
+     .borderGroup {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          label {
+               // position: relative;
+               cursor: pointer;
+          }
+          label::before {
+               width: 20px;
+               height: 20px;
+               position: absolute;
+               content: "";
+               border-radius: 50%;
+               border: 1px solid #65677c;
+               background-color: transparent;
+               transition: all 0.2s linear;
+          }
+          label:hover::before {
+               border: 1px solid hsl(192, 100%, 67%);
+          }
+          input {
+               position: absolute;
+               visibility: hidden;
+          }
+          input:checked ~ label::before {
+               border: none;
+               background-image:url(../images/icon-check.svg), 
+               linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+               background-repeat: no-repeat;
+               background-position: center;
+          }
+     }
+     .title-completed {
+          text-decoration: line-through;
+     }
+}

@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+.container {
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.todo-app {
+  max-width: 580px;
+  padding: 0 20px;
+  width: 100%;
+  margin: -224px auto 0px;
+}
+
+.todo-app .todo-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-app .todo-heading {
+  color: white;
+  letter-spacing: 1rem;
+}
+
+.todo-app .todo-toggle {
+  cursor: pointer;
+}
+
+.todo-app .todo-form {
+  margin-top: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+}
+
+.todo-app #todo-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  padding: 1.5rem;
+}
+
+.todo-app .border {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 25px;
+  border: 1px solid #65677c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.todo-app .border-check {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+  border: none;
+}
+
+.todo-app .todo-list {
+  margin-top: 30px;
+  border-radius: 5px;
+  position: relative;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.todo-app .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+.todo-app .todo-item-title {
+  margin-left: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 25px;
+}
+
+.todo-app .todo-item img {
+  opacity: 0;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.todo-app .todo-item:hover img {
+  opacity: 1;
+}
+
+.todo-app .icon-cross {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.todo-app .borderGroup {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.todo-app .borderGroup label {
+  cursor: pointer;
+}
+
+.todo-app .borderGroup label::before {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  border: 1px solid #65677c;
+  background-color: transparent;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.todo-app .borderGroup label:hover::before {
+  border: 1px solid #57ddff;
+}
+
+.todo-app .borderGroup input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.todo-app .borderGroup input:checked ~ label::before {
+  border: none;
+  background-image: url(../images/icon-check.svg), -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background-image: url(../images/icon-check.svg), linear-gradient(#57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.todo-app .title-completed {
+  text-decoration: line-through;
+}
+
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+}
+
+.filter button {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.filter button:last-child {
+  padding: 0;
+}
+
+.filter p {
+  font-size: 16px;
+}
+
+.filter .active {
+  color: #3a7bfd !important;
+}
+
+.filter .dark:hover {
+  color: #cacde8 !important;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.filter .light:hover {
+  color: #51505e !important;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+@media screen and (max-width: 767px) {
+  .filter .status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 1.5rem;
+    bottom: -100px;
+    border-radius: 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+
+.footer .attribution {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 13px;
+  padding: 10px 0;
+  color: #fff;
+}
+
+.footer .attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */
